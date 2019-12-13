@@ -1,10 +1,5 @@
 <?php 
-	$lower = 'abcdefghijklmnopqrstuvwxyz';
-	$upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	$numbers = '0123456789';
-	$symbols = '#$%*!';
-
-	$chars = $lower . $upper . $numbers . $symbols;
+	
 	// echo $chars;
 
 	echo '<br>';
@@ -47,8 +42,9 @@ function random_char($string){
 	
 	
 
-function random_string($char_set) {
-	$length = 5;
+function random_string($length,$char_set) {
+	// $length = 5; we can use dynamic length from now.passed as 
+	//parameter of generate_password func
 	$temp = '';
 	for($i=0; $i < $length ; $i++)
 	{
@@ -56,7 +52,45 @@ function random_string($char_set) {
 	}
 	return $temp;
 }
-	echo random_string($chars);
 
-// Programming logic builds up like this. First a task is determined, then tested with variable and builtin function by echo output. Then if result is out as desired then build to use function and loops.
+// Programming logic builds up like this. First a task is determined, then tested with variable and builtin function by echo output. Then if result is out as desired then build to use function and loops.     
+
+// Configuring charset using generate_password func and length parameter. 
+
+	function generate_password($length){
+
+	$lower = 'abcdefghijklmnopqrstuvwxyz';
+	$upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	$numbers = '0123456789';
+	$symbols = '#$%*!';
+
+	
+	$chars = $lower . $upper . $numbers . $symbols;
+	return random_string($length,$chars);
+	}
+
+	echo generate_password(9);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
