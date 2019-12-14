@@ -31,7 +31,7 @@
 // Programming logic builds up like this. First a task is determined, then tested with variable and builtin funtion by echo output. Then if result is out as desired then build to use function and loops.
 
 function random_char($string){
-	$i = rand(0,strlen($string)-1);
+	$i = mt_rand(0,strlen($string)-1);
 	return $string[$i];
 }
 
